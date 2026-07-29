@@ -1,7 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="8" fill="#7c3aed"/>
-  <path d="M16 6L20 14H12L16 6Z" fill="white"/>
-  <path d="M10 16L22 16" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-  <path d="M12 20L20 20" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-  <path d="M14 24L18 24" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#5b21b6"/>
+    </linearGradient>
+  </defs>
+  <!-- Receipt body with zigzag bottom -->
+  <path d="M3 0H29a3 3 0 0 1 3 3V24L26.5 28 23 24 19.5 28 16 24 12.5 28 9 24 5.5 28 2 24 0 26V3a3 3 0 0 1 3-3Z" fill="url(#bg)"/>
+  <!-- Terminal ">" caret -->
+  <path d="M8 13.5L14 17L8 20.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Cursor underline -->
+  <rect x="16.5" y="19" width="8" height="2.2" rx="1.1" fill="white" opacity="0.8"/>
 </svg>

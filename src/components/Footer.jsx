@@ -1,5 +1,38 @@
 import { Link } from 'react-router-dom'
-import { Zap, Github, Twitter } from 'lucide-react'
+import { Github, Twitter } from 'lucide-react'
+
+function PromptPlayLogo({ size = 24 }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 28 28"
+      fill="none"
+      aria-hidden="true"
+    >
+      <defs>
+        <linearGradient id="pp-foot-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#8b5cf6" />
+          <stop offset="100%" stopColor="#5b21b6" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M3 0H25a3 3 0 0 1 3 3V21L23 25 19.5 21 16 25 12.5 21 9 25 5.5 21 2 25 0 23V3a3 3 0 0 1 3-3Z"
+        fill="url(#pp-foot-bg)"
+      />
+      <path
+        d="M7 11.5L12 14.5L7 17.5"
+        stroke="white"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+      <rect x="14" y="16.2" width="7" height="1.9" rx="0.95" fill="white" opacity="0.8" />
+    </svg>
+  )
+}
 
 export default function Footer() {
   return (
@@ -9,9 +42,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="flex flex-col gap-3">
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded-md bg-pp-purple flex items-center justify-center">
-                <Zap className="w-3.5 h-3.5 text-white" fill="currentColor" />
-              </div>
+              <PromptPlayLogo size={24} />
               <span className="font-bold text-pp-text text-sm">
                 prompt<span className="text-pp-purple-light">play</span>
               </span>

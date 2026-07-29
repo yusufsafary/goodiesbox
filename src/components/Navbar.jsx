@@ -1,12 +1,48 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, Zap } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 const links = [
   { href: '/beta', label: 'Try Beta' },
   { href: '/leaderboard', label: 'Leaderboard' },
   { href: '/about', label: 'About' },
 ]
+
+function PromptPlayLogo({ size = 28 }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 28 28"
+      fill="none"
+      aria-hidden="true"
+    >
+      <defs>
+        <linearGradient id="pp-logo-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#8b5cf6" />
+          <stop offset="100%" stopColor="#5b21b6" />
+        </linearGradient>
+      </defs>
+      {/* Receipt body with zigzag bottom */}
+      <path
+        d="M3 0H25a3 3 0 0 1 3 3V21L23 25 19.5 21 16 25 12.5 21 9 25 5.5 21 2 25 0 23V3a3 3 0 0 1 3-3Z"
+        fill="url(#pp-logo-bg)"
+      />
+      {/* Terminal ">" caret */}
+      <path
+        d="M7 11.5L12 14.5L7 17.5"
+        stroke="white"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+      {/* Cursor underline */}
+      <rect x="14" y="16.2" width="7" height="1.9" rx="0.95" fill="white" opacity="0.8" />
+    </svg>
+  )
+}
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -31,9 +67,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-7 h-7 rounded-lg bg-pp-purple flex items-center justify-center group-hover:bg-purple-600 transition-colors">
-              <Zap className="w-4 h-4 text-white" fill="currentColor" />
-            </div>
+            <PromptPlayLogo size={28} />
             <span className="font-bold text-pp-text text-sm sm:text-base tracking-tight">
               prompt<span className="text-pp-purple-light">play</span>
             </span>
